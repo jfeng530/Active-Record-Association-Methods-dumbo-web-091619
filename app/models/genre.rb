@@ -7,10 +7,12 @@ class Genre < ActiveRecord::Base
   end
 
   def artist_count
-    self.artist.length
+    self.artists.length
   end
 
   def all_artist_names
-    self.artist.
+    self.artists.map do |artist|
+      artist.name
+    end 
   end
 end
